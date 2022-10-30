@@ -1,0 +1,15 @@
+version: '3.8'
+services: 
+    app:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        # command: 'php artisan serve --host=0.0.0.0'
+        # user: "user:${GIP}"
+        volumes:
+            - .:/php
+            - /var/run/docker.sock:/var/run/docker.sock
+            #- /var/run/docker.sock:/var/run/dev-test/sock
+        ports:
+            - 80:80
+            
