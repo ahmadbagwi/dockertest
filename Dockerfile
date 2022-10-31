@@ -9,9 +9,5 @@ RUN apt-get update && apt-get install -y \
      curl \
      socat
 
-RUN docker-php-ext-install pdo_mysql
-
-CMD socat UNIX-LISTEN:/var/run/dev-test/sock -
-
 WORKDIR /php
 COPY . .
