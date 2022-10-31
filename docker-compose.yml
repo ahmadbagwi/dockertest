@@ -5,11 +5,11 @@ services:
             context: .
             dockerfile: Dockerfile
         # command: 'php artisan serve --host=0.0.0.0'
-        # user: "user:${GIP}"
+        # user: "ahmad-x:${GIP}"
         volumes:
             - .:/php
-            - /var/run/docker.sock:/var/run/docker.sock
-            #- /var/run/docker.sock:/var/run/dev-test/sock
+            #- ./sock:/var/run/dev-test/
+            - /var/run/docker.sock:/var/run/dev-test
         ports:
             - 80:80
             
